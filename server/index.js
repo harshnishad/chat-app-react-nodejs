@@ -9,12 +9,13 @@ const path =require('path')
 
 
 
-//static files
-app.use(express.static(path.join(_dirname,'../public/build')))
+// Static files
+app.use(express.static(path.join(__dirname, '../public/build'))); // Fixed typo
 
-app.get('*',(req,res)=>{
-    res.sendFile(path.join(__dirname,"../public/build/index.html"))
-})
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/build/index.html"));
+});
+
 
 require("dotenv").config();
 
