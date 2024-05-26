@@ -23,7 +23,7 @@ app.use(cors());
 app.use(express.json());
 
 mongoose
-  .connect(process.env.MONGO_URL, {
+  .connect('mongodb+srv://harshnishad582:SJfndBywfetrdBWX@harsh.fdseb46.mongodb.net/chat', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
