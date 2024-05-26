@@ -5,17 +5,14 @@ const authRoutes = require("./routes/auth");
 const messageRoutes = require("./routes/messages");
 const app = express();
 const socket = require("socket.io");
-const path =require('path')
-
-
+const path = require('path');
 
 // Static files
-app.use(express.static(path.join(__dirname, '../public/build'))); // Fixed typo
+app.use(express.static(path.join(__dirname, '../public/build')));
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, "../public/build/index.html"));
 });
-
 
 require("dotenv").config();
 
@@ -28,7 +25,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("DB Connetion Successfull");
+    console.log("DB Connection Successful");
   })
   .catch((err) => {
     console.log(err.message);
